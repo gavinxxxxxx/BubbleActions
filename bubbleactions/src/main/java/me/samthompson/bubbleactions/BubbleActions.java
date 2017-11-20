@@ -42,7 +42,6 @@ public final class BubbleActions {
     Drawable indicator;
 
     private BubbleActions(ViewGroup root) {
-//        this.indicator = ResourcesCompat.getDrawable(root.getResources(), R.drawable.bubble_actions_indicator, root.getContext().getTheme());
         this.indicator = ContextCompat.getDrawable(root.getContext(), R.drawable.bubble_actions_indicator);
         this.root = root;
         overlay = new BubbleActionOverlay(root.getContext());
@@ -333,23 +332,6 @@ public final class BubbleActions {
 
 //                case DragEvent.ACTION_DROP:
                 case DragEvent.ACTION_DRAG_ENDED:
-                    overlay.getAnimateSetHide()
-                            .setListener(new ViewPropertyAnimatorListener() {
-                                @Override
-                                public void onAnimationStart(View view) {
-
-                                }
-
-                                @Override
-                                public void onAnimationEnd(View view) {
-
-                                }
-
-                                @Override
-                                public void onAnimationCancel(View view) {
-
-                                }
-                            })
                     overlay.getAnimateSetHide()
                             .setListener(new ViewPropertyAnimatorListenerAdapter() {
                                 @Override
