@@ -5,8 +5,10 @@ import android.graphics.Point;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewCompat;
+import android.support.v4.view.ViewPropertyAnimatorListener;
 import android.support.v4.view.ViewPropertyAnimatorListenerAdapter;
 import android.support.v7.widget.PopupMenu;
 import android.view.DragEvent;
@@ -40,7 +42,8 @@ public final class BubbleActions {
     Drawable indicator;
 
     private BubbleActions(ViewGroup root) {
-        this.indicator = ResourcesCompat.getDrawable(root.getResources(), R.drawable.bubble_actions_indicator, root.getContext().getTheme());
+//        this.indicator = ResourcesCompat.getDrawable(root.getResources(), R.drawable.bubble_actions_indicator, root.getContext().getTheme());
+        this.indicator = ContextCompat.getDrawable(root.getContext(), R.drawable.bubble_actions_indicator);
         this.root = root;
         overlay = new BubbleActionOverlay(root.getContext());
         overlay.setOnDragListener(overlayDragListener);
@@ -328,7 +331,25 @@ public final class BubbleActions {
                         return false;
                     }
 
+//                case DragEvent.ACTION_DROP:
                 case DragEvent.ACTION_DRAG_ENDED:
+                    overlay.getAnimateSetHide()
+                            .setListener(new ViewPropertyAnimatorListener() {
+                                @Override
+                                public void onAnimationStart(View view) {
+
+                                }
+
+                                @Override
+                                public void onAnimationEnd(View view) {
+
+                                }
+
+                                @Override
+                                public void onAnimationCancel(View view) {
+
+                                }
+                            })
                     overlay.getAnimateSetHide()
                             .setListener(new ViewPropertyAnimatorListenerAdapter() {
                                 @Override

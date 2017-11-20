@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
@@ -19,12 +20,16 @@
         android:paddingRight="8dp"
         android:paddingTop="2dp"
         android:textColor="@color/bubble_actions_text_color"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        tools:alpha="1"
+        tools:text="测试"
+        tools:textColor="#555555" />
 
     <ImageView
         android:id="@+id/bubble_actions_item_icon"
         android:layout_width="@dimen/bubble_actions_bubble_dimension"
         android:layout_height="@dimen/bubble_actions_bubble_dimension"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        tools:src="#ff0000" />
 
 </merge>

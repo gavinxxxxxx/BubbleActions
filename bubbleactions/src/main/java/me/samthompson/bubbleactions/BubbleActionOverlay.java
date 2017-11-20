@@ -227,6 +227,11 @@ class BubbleActionOverlay extends FrameLayout {
 
     void startDrag() {
         startDrag(dragData, dragShadowBuilder, null, 0);
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//            startDragAndDrop(dragData, dragShadowBuilder, null, 0);
+//        } else {
+//            startDrag(dragData, dragShadowBuilder, null, 0);
+//        }
     }
 
     void animateDimBackground() {

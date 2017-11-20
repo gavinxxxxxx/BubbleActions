@@ -19,13 +19,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.kotlin_example).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, KotlinActivity.class));
-            }
-        });
-
         findViewById(R.id.menu_example).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
